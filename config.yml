@@ -1,0 +1,59 @@
+# Dati profilo
+name: "Alessio Bellan"
+picture: "assets/images/profile.png"   # immagine grande per l'header/card
+logo: ""                                 # opzionale: se vuoto non viene usato
+bio: "Project Manager | Junior System Administrator | Videogames Marketing"
+
+# Font
+font: "'Stack Sans Notch', sans-serif"
+fontUrl: "https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap"
+
+# Metadati pagina
+meta:
+  lang: "en"
+  description: "Project Manager | Junior System Administrator | Videogames Marketing"
+  title: "Alessio Bellan"
+  author: "Alessio Bellan"
+  siteUrl: "https://alessiobellan.github.io"
+
+# Tavolozza (dove agiscono i colori)
+colors:
+  # Sfondo globale (body)
+  background: "transparent"
+  backgroundGradient: "linear-gradient(0deg, #e18f22 65%, #f8c823 100%)"
+  text: "#1f1f2e"
+
+  # Header/picture
+  heroBackground: "transparent"
+
+  # Card principale (nome/bio e contenuto)
+  mainBackground: "transparent"
+  sectionBorder: "#e2e2e2"
+  sectionText: "#1f1f2e"
+  bio: "#555b6c"
+
+  # Link e hover
+  linkBackground: "#ffffff"
+  linkText: "#1a73e8"
+  linkBorder: "#1a73e8"
+  hoverBackground: "#e18f22"
+  hoverText: "#ffffff"
+
+socials:
+  - name: "Instagram"
+    url: "https://instagram.com"
+    icon: "fa-brands fa-instagram"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/lucasnevespereira/"
+    icon: "fa-brands fa-linkedin-in"
+  - name: "Twitter/X"
+    url: "https://twitter.com/lucaasnp_"
+    icon: "fa-brands fa-x-twitter"
+
+links:
+  - name: "Github"
+    url: "https://github.com/alessiobellan"
+  - name: "Digital Heroes"
+    url: "https://www.digital-heroes.me"
+
+theme: "custom"

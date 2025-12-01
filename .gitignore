@@ -1,0 +1,24 @@
+# Build artifacts
+bin/
+build/
+dist/
+*.exe
+*.exe~
+*.out
+*.test
+*.log
+
+# Dependencies
+node_modules/
+vendor/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Go tool cache
+.cache/

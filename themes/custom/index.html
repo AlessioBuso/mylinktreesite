@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="{{.Config.Meta.Lang}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{.Config.Meta.Description}}" />
+    <title>{{.Config.Meta.Title}}</title>
+    <meta name="author" content="{{.Config.Meta.Author}}" />
+    <link rel="canonical" href="{{.Config.Meta.SiteURL}}" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" />
+    {{- if .Config.FontURL }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{.Config.FontURL}}" />
+    {{- else }}
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    />
+    {{- end }}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+      <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      :root {
+        {{- with .Config.Font }}--font-family: {{.}};{{- end}}
+        {{- with .Config.Colors.Background }}--background-color: {{.}};{{- end}}
+        {{- with .BackgroundGradient }}--background-gradient: {{.}};{{- end}}
+        {{- with .Config.Colors.Text }}--text-color: {{.}};{{- end}}
+        {{- with .Config.Colors.HeroBackground }}--hero-bg: {{.}};{{- end}}
+        {{- with .Config.Colors.MainBackground }}--main-bg: {{.}};{{- end}}
+        {{- with .Config.Colors.SectionBorder }}--section-border: {{.}};{{- end}}
+        {{- with .Config.Colors.SectionText }}--section-text: {{.}};{{- end}}
+        {{- with .Config.Colors.LinkBackground }}--link-bg: {{.}};{{- end}}
+        {{- with .Config.Colors.LinkText }}--link-text: {{.}};{{- end}}
+        {{- with .Config.Colors.LinkBorder }}--link-border: {{.}};{{- end}}
+        {{- with .Config.Colors.Bio }}--bio-color: {{.}};{{- end}}
+        {{- with .Config.Colors.HoverBackground }}--hover-bg: {{.}};{{- end}}
+        {{- with .Config.Colors.HoverText }}--hover-text: {{.}};{{- end}}
+        {{- with .Config.Picture }}--header-image: url('{{.}}');{{- end}}
+      }
+    </style>
+
+    <meta property="og:title" content="{{.Config.Meta.Title}}" />
+    <meta property="og:site_name" content="{{.Config.Meta.Title}}" />
+    <meta property="og:description" content="{{.Config.Meta.Description}}" />
+    <meta property="og:locale" content="{{.Config.Meta.Lang}}" />
+
+    <meta name="twitter:title" content="{{.Config.Meta.Title}}" />
+    <meta name="twitter:description" content="{{.Config.Meta.Description}}" />
+    <meta name="language" content="{{.Config.Meta.Lang}}" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__image" style="background-image: url('{{.Config.Picture}}');"></div>
+      <div class="hero__overlay"></div>
+    </header>
+    <div class="hidden-card" aria-hidden="true"></div>
+    <main>
+      <section class="profile-card">
+        <h1>{{.Config.Name}}</h1>
+        <p class="bio">{{.Config.Bio}}</p>
+      </section>
+      {{if .Config.Socials}}
+      <section class="social-row">
+        {{range .Config.Socials}}
+        <a class="social-pill" href="{{.URL}}" target="_blank" rel="noopener noreferrer" title="{{.Name}}">
+          <i class="{{.Icon}}" aria-hidden="true"></i>
+        </a>
+        {{end}}
+      </section>
+      {{end}}
+      <section class="links">
+        {{range .Config.Links}}
+        <a
+          class="link-item"
+          href="{{.URL}}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>{{.Name}}</p>
+        </a>
+        {{end}}
+      </section>
+    </main>
+    <footer>
+      <small>© <span class="year"></span> {{.Config.Meta.Author}} </small>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
