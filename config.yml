@@ -67,7 +67,7 @@ links:
     hoverText: "#cc7cf7"
 
 # Scala immagine header (1 = default)
-heroScale: 1.4
+heroScale: 1.2
 
 # Tema
 theme: "custom"
