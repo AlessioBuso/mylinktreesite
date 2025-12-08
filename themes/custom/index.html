@@ -9,7 +9,11 @@
     <link rel="canonical" href="{{.Config.Meta.SiteURL}}" />
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
       <link rel="shortcut icon" href="assets/icons/favicon.ico" />
-    <!-- Local fonts are loaded via assets/fonts/*.woff2 -->
+    <!-- Local fonts sono caricati via assets/fonts/*.woff2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -83,7 +87,7 @@
             href="{{.URL}}"
             target="_blank"
             rel="noopener noreferrer"
-            style="{{$style}}"
+            style="{{$style | safeCSS}}"
           >
             <p>{{.Name}}</p>
           </a>
