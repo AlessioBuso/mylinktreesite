@@ -1,8 +1,8 @@
 # Dati profilo
-name: "Alessio Bellan"
-picture: "assets/images/profile.png"   # immagine grande per l'header/card
+name: "Alessio Buso"
+picture: "assets/images/LOGO_Buso.png"   # immagine grande per l'header/card
 logo: ""                                 # opzionale: se vuoto non viene usato
-bio: "Project Manager | Junior System Administrator | Videogames Marketing"
+bio: "Graphic Designer & Visual Creator"
 
 # Font locali: indica i percorsi dei file (copiati in assets/fonts/)
 fontTitleFile: "assets/fonts/font_title.woff2"
@@ -11,8 +11,8 @@ fontBodyFile: "assets/fonts/font_body.woff2"
 # Metadati pagina
 meta:
   lang: "it"
-  description: "Project Manager | Junior System Administrator | Videogames Marketing"
-  title: "Alessio Bellan"
+  description: "Graphic Designer & Visual Creator"
+  title: "Alessio Buso"
   author: "Alessio Bellan"
   siteUrl: "https://alessiobellan.github.io"
 
@@ -20,7 +20,7 @@ meta:
 colors:
   # Sfondo globale
   background: "#ffffff"
-  backgroundGradient: "linear-gradient(0deg, #e18f22 65%, #f8c823 100%)"
+  backgroundGradient: "linear-gradient(0deg, #141112 60%, #161314 100%)"
   text: "#1f1f2e"
 
   # Header/picture
@@ -28,7 +28,7 @@ colors:
 
   # Card principale (nome/bio)
   mainBackground: "#transparent"
-  sectionBorder: "#ffffff"
+  sectionBorder: "#808080"
   sectionText: "#ffffff"
   bio: "#ffffff"
 
@@ -38,8 +38,8 @@ colors:
   linkBorder: "#ffffff"
   socialIcon: "#ffffff"
   buttonText: "#ffffff"
-  hoverBackground: "#e18f22"
-  hoverText: "#ffffff"
+  hoverBackground: "#ffffff"
+  hoverText: "#161314"
 
 socials:
   - name: "Instagram"
@@ -48,31 +48,22 @@ socials:
   - name: "LinkedIn"
     url: "https://www.linkedin.com/in/alessiobellan/"
     icon: "fa-brands fa-linkedin-in"
-  - name: "Telegram"
-    url: "https://t.me/Alessiobellan"
-    icon: "fa-brands fa-telegram"
+  - name: "Mail"
+    url: "mailto:alessio04.buso@gmail.com"
+    icon: "fa-solid fa-envelope"
 
 # Colori per singolo bottone (se i campi non sono presenti usa i default sopra)
 links:
-  - name: "Github"
-    url: "https://github.com/alessiobellan"
-    background: "#ffffff"
-    text: "#1a73e8"
-    border: "#1a73e8"
-    hoverBackground: "#1a73e8"
-    hoverText: "#ffffff"
   - name: "Digital Heroes"
     url: "https://www.digital-heroes.me"
-  - name: "Email"
-    url: "mailto:alessiobellan@digital-heroes.me"
-    background: "#f8c823"
-    text: "#1f1f2e"
-    border: "#f8c823"
-    hoverBackground: "#e18f22"
+    background: "#cc7cf7"
+    text: "#1a73e8"
+    border: "#1a73e8"
+    hoverBackground: "#cc7cf7"
     hoverText: "#ffffff"
 
 # Scala immagine header (1 = default)
-heroScale: 1.2
+heroScale: 1.6
 
 # Tema
 theme: "custom"
