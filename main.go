@@ -35,7 +35,11 @@ func main() {
 func generateHTML(config *configs.SiteConfig) error {
 	themeFile := fmt.Sprintf("themes/%s/index.html", config.Theme)
 
-	tmpl, err := template.ParseFiles(themeFile)
+	funcs := template.FuncMap{
+		"safeCSS": func(s string) template.CSS { return template.CSS(s) },
+	}
+
+	tmpl, err := template.New(filepath.Base(themeFile)).Funcs(funcs).ParseFiles(themeFile)
 	if err != nil {
 		return err
 	}

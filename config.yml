@@ -55,21 +55,16 @@ socials:
 # Colori per singolo bottone (se i campi non sono presenti usa i default sopra)
 links:
   - name: "Github"
-    url: "https://github.com/alessiobellan"
-    background: "#ffffff"
-    text: "#1a73e8"
-    border: "#1a73e8"
-    hoverBackground: "#1a73e8"
-    hoverText: "#ffffff"
+    url: "https://github.com/tonnoconsorzio"
+  - name: "Email - a.bellan@digital-heroes.me"
+    url: "mailto:alessiobellan@digital-heroes.me"
   - name: "Digital Heroes"
     url: "https://www.digital-heroes.me"
-  - name: "Email"
-    url: "mailto:alessiobellan@digital-heroes.me"
-    background: "#f8c823"
-    text: "#1f1f2e"
-    border: "#f8c823"
-    hoverBackground: "#e18f22"
-    hoverText: "#ffffff"
+    background: "#cc7cf7"
+    text: "#3f0261"
+    border: "#cc7cf7"
+    hoverBackground: "#3f0261"
+    hoverText: "#cc7cf7"
 
 # Scala immagine header (1 = default)
 heroScale: 1.2

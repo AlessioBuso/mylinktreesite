@@ -14,7 +14,7 @@
   --header-margin-bottom: 1rem;
   --line-height: 2;
   --font-size: 16px;
-  --hero-height: 220px;
+  --hero-height: 230px;
 
   --background-color: #f0f0f0;
   --text-color: #333;
@@ -41,14 +41,14 @@ body {
   justify-content: center;
   background: var(--background-gradient, var(--background-color, #ffffff));
   color: var(--text-color, #1f1f2e);
-  padding: 12px 12px 24px;
+  padding: 8px 12px 20px;
   font-family: var(--font-body);
 }
 
 .page {
   width: min(var(--max-width), 100%);
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 /* Header Styles */
@@ -58,7 +58,7 @@ body {
   aspect-ratio: 1.6;
   border-radius: 22px;
   overflow: hidden;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   background: var(--hero-bg, var(--background-color, transparent));
   border: 1px solid var(--section-border, transparent);
 }
@@ -67,7 +67,7 @@ body {
   position: absolute;
   inset: 0;
   background-image: var(--header-image);
-  background-size: clamp(calc(110px * var(--hero-scale, 1)), calc(34vw * var(--hero-scale, 1)), calc(190px * var(--hero-scale, 1)));
+  background-size: clamp(calc(140px * var(--hero-scale, 1)), calc(38vw * var(--hero-scale, 1)), calc(210px * var(--hero-scale, 1)));
   background-position: center 50%;
   background-repeat: no-repeat;
   background-color: transparent;
