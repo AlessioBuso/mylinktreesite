@@ -53,21 +53,21 @@ socials:
 links:
   - name: "alessio04.buso@gmail.com"
     url: "mailto:alessio04.buso@gmail.com"
-    background: "#cc7cf7"
-    text: "#1a73e8"
-    border: "#1a73e8"
-    hoverBackground: "#cc7cf7"
-    hoverText: "#ffffff" 
-  - name: "Digital Heroes"
+    background: "#transparent"
+    text: "#ffffff"
+    border: "#ffffff"
+    hoverBackground: "#ffffff"
+    hoverText: "#161314" 
+  - name: "𝗗𝗜𝗚𝗜𝗧𝗔𝗟 𝗛𝗘𝗥𝗢𝗘𝗦"
     url: "https://www.digital-heroes.me"
     background: "#cc7cf7"
-    text: "#1a73e8"
-    border: "#1a73e8"
-    hoverBackground: "#cc7cf7"
-    hoverText: "#ffffff"
+    text: "#3e0260"
+    border: "#transparent"
+    hoverBackground: "#3e0260"
+    hoverText: "#cc7cf7"
 
 # Scala immagine header (1 = default)
-heroScale: 1.6
+heroScale: 1.4
 
 # Tema
 theme: "custom"
