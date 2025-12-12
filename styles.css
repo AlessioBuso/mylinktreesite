@@ -108,6 +108,13 @@ body {
   object-fit: cover;
 }
 
+.hero {
+  display: flex; /* o grid */
+  justify-content: center;
+  align-items: center;
+  /* controlla se ci sono width/height fissi */
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -311,17 +318,25 @@ body {
 }
 
 .hero__image {
-  width: 250px;             /* dimensione desktop */
-  height: 250px;
-  background-size: contain;  /* mantiene proporzioni */
+  width: 40vw;             /* 40% della larghezza del viewport */
+  max-width: 250px;        /* massimo su desktop */
+  height: auto;
+  aspect-ratio: 1 / 1;     /* mantiene il quadrato */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-/* Mobile */
+@media (max-width: 960px) {
+  .hero__image {
+    width: 50vw;
+    max-width: 200px;
+  }
+}
+
 @media (max-width: 560px) {
   .hero__image {
-    width: 150px;
-    height: 150px;
+    width: 60vw;
+    max-width: 150px;
   }
 }
