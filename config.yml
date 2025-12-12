@@ -20,7 +20,7 @@ meta:
 colors:
   # Sfondo globale
   background: "#ffffff"
-  backgroundGradient: "linear-gradient(0deg, #0f0d0e 60%, #141213 100%)"
+  backgroundGradient: "linear-gradient(0deg, #141213 60%, #0f0d0e 100%)"
   text: "#1f1f2e"
 
   # Header/picture
