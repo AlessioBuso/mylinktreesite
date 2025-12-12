@@ -109,10 +109,13 @@ body {
 }
 
 .hero {
-  display: flex; /* o grid */
+  height: auto !important;      /* lascia crescere il contenitore */
+  min-height: 300px;            /* minimo per desktop */
+  overflow: visible !important; /* non tagliare l'immagine */
+  display: flex;
   justify-content: center;
   align-items: center;
-  /* controlla se ci sono width/height fissi */
+  padding: 20px 0;
 }
 
 .hero-overlay {
@@ -318,25 +321,7 @@ body {
 }
 
 .hero__image {
-  width: 40vw;             /* 40% della larghezza del viewport */
-  max-width: 250px;        /* massimo su desktop */
-  height: auto;
-  aspect-ratio: 1 / 1;     /* mantiene il quadrato */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-@media (max-width: 960px) {
-  .hero__image {
-    width: 50vw;
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero__image {
-    width: 60vw;
-    max-width: 150px;
-  }
+  width: auto !important;       /* usa larghezza naturale dell'immagine */
+  max-width: 80%;               /* non troppo grande su schermi grandi */
+  height: auto !important;      /* mantiene proporzioni */
 }
