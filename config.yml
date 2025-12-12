@@ -20,7 +20,7 @@ meta:
 colors:
   # Sfondo globale
   background: "#ffffff"
-  backgroundGradient: "linear-gradient(0deg, #141112 60%, #161314 100%)"
+  backgroundGradient: "linear-gradient(0deg, #0f0d0e 60%, #141213 100%)"
   text: "#1f1f2e"
 
   # Header/picture
@@ -67,7 +67,7 @@ links:
     hoverText: "#cc7cf7"
 
 # Scala immagine header (1 = default)
-heroScale: 2.8
+heroScale: 1.5
 
 # Tema
 theme: "custom"
