@@ -17,6 +17,8 @@ type SiteConfig struct {
 	HeroScale string `yaml:"heroScale"`
 	Meta    Meta   `yaml:"meta"`
 	Links   []Link `yaml:"links"`
+	Projects []Project `yaml:"projects"`
+	InstagramURL string `yaml:"instagramUrl"`
 	Colors  Colors `yaml:"colors"`
 	Socials []Social `yaml:"socials"`
 	Theme   string `yaml:"theme"`
@@ -38,6 +40,14 @@ type Link struct {
 	Border     string `yaml:"border"`
 	HoverBackground string `yaml:"hoverBackground"`
 	HoverText string `yaml:"hoverText"`
+}
+
+type Project struct {
+	Name string `yaml:"name"`
+	URL string `yaml:"url"`
+	Logo string `yaml:"logo"`
+	Alt string `yaml:"alt"`
+	Class string `yaml:"class"`
 }
 
 type Colors struct {

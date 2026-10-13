@@ -4,6 +4,7 @@ clean:
 	@echo "Cleaning site..."
 	rm -rf index.html
 	rm -rf assets/css assets/js assets/icons
+	rm -rf assets/data
 
 site: clean
 	@echo "Building site..."

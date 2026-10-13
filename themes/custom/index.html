@@ -6,97 +6,91 @@
     <meta name="description" content="{{.Config.Meta.Description}}" />
     <title>{{.Config.Meta.Title}}</title>
     <meta name="author" content="{{.Config.Meta.Author}}" />
+    <meta name="theme-color" content="#141213" />
     <link rel="canonical" href="{{.Config.Meta.SiteURL}}" />
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
-      <link rel="shortcut icon" href="assets/icons/favicon.ico" />
-    <!-- Local fonts sono caricati via assets/fonts/*.woff2 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-      <link rel="stylesheet" href="assets/css/styles.css" />
-    <style>
-      :root {
-        {{- with .Config.FontTitleFile }}--font-title-src: url('{{.}}');{{- end}}
-        {{- with .Config.FontBodyFile }}--font-body-src: url('{{.}}');{{- end}}
-        {{- with .Config.Colors.Background }}--background-color: {{.}};{{- end}}
-        {{- with .BackgroundGradient }}--background-gradient: {{.}};{{- end}}
-        {{- with .Config.Colors.Text }}--text-color: {{.}};{{- end}}
-        {{- with .Config.Colors.HeroBackground }}--hero-bg: {{.}};{{- end}}
-        {{- with .Config.Colors.MainBackground }}--main-bg: {{.}};{{- end}}
-        {{- with .Config.Colors.SectionBorder }}--section-border: {{.}};{{- end}}
-        {{- with .Config.Colors.SectionText }}--section-text: {{.}};{{- end}}
-        {{- with .Config.Colors.LinkBackground }}--link-bg: {{.}};{{- end}}
-        {{- with .Config.Colors.LinkText }}--link-text: {{.}};{{- end}}
-        {{- with .Config.Colors.LinkBorder }}--link-border: {{.}};{{- end}}
-        {{- with .Config.Colors.SocialIcon }}--social-color: {{.}};{{- end}}
-        {{- with .Config.Colors.ButtonText }}--button-text: {{.}};{{- end}}
-        {{- with .Config.Colors.Bio }}--bio-color: {{.}};{{- end}}
-        {{- with .Config.Colors.HoverBackground }}--hover-bg: {{.}};{{- end}}
-        {{- with .Config.Colors.HoverText }}--hover-text: {{.}};{{- end}}
-        {{- with .Config.HeroScale }}--hero-scale: {{.}};{{- end}}
-        {{- with .Config.Picture }}--header-image: url('{{.}}');{{- end}}
-      }
-    </style>
-
+    <link rel="preload" href="assets/fonts/font_title.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/font_body.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <meta property="og:title" content="{{.Config.Meta.Title}}" />
-    <meta property="og:site_name" content="{{.Config.Meta.Title}}" />
     <meta property="og:description" content="{{.Config.Meta.Description}}" />
-    <meta property="og:locale" content="{{.Config.Meta.Lang}}" />
-
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="{{.Config.Meta.SiteURL}}" />
+    <meta property="og:image" content="https://alessiobuso.github.io/mylinktreesite/assets/images/og-image.png" />
+    <meta property="og:image:alt" content="Logo Alessio Buso" />
+    <meta property="og:locale" content="it_IT" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{.Config.Meta.Title}}" />
     <meta name="twitter:description" content="{{.Config.Meta.Description}}" />
-    <meta name="language" content="{{.Config.Meta.Lang}}" />
+    <meta name="twitter:image" content="https://alessiobuso.github.io/mylinktreesite/assets/images/og-image.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Alessio Buso | Graphic Designer & Visual Creator",
+        "url": "https://alessiobuso.github.io/mylinktreesite/",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Alessio Buso",
+          "jobTitle": "Graphic Designer & Visual Creator",
+          "image": "https://alessiobuso.github.io/mylinktreesite/assets/images/og-image.png",
+          "sameAs": [
+            "https://www.instagram.com/buso_design/",
+            "https://www.linkedin.com/in/alessiobuso/"
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- Developed by Alessio Bellan -->
-    <div class="page">
-      <header class="hero">
-        <div class="hero__image" style="background-image: url('{{.Config.Picture}}');"></div>
-        <div class="hero__overlay"></div>
+    <a class="skip-link" href="#main-content">Vai al contenuto</a>
+    <div class="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <img class="loader__logo" src="{{.Config.Picture}}" alt="" width="240" height="134" />
+        <div class="loader__dots"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="page-shell">
+      <header class="hero" data-tilt-card data-reveal>
+        <div class="hero__card">
+          <img class="hero__logo" src="{{.Config.Picture}}" alt="Logo Alessio Buso" width="680" height="379" fetchpriority="high" />
+        </div>
       </header>
-      <div class="hidden-card" aria-hidden="true"></div>
-      <main>
-        <section class="profile-card">
-          <h1>{{.Config.Name}}</h1>
-          <p class="bio">{{.Config.Bio}}</p>
+      <main id="main-content">
+        <section class="profile" aria-labelledby="profile-title" data-reveal>
+          <h1 id="profile-title" data-typing-title><span class="typing-title-full">{{.Config.Name}}</span><span class="typing-title-typed" aria-hidden="true"></span></h1>
+          <p class="profile__bio">{{.Config.Bio}}</p>
         </section>
-        {{if .Config.Socials}}
-        <section class="social-row">
-          {{range .Config.Socials}}
-          <a class="social-pill" href="{{.URL}}" target="_blank" rel="noopener noreferrer" title="{{.Name}}">
-            <i class="{{.Icon}}" aria-hidden="true"></i>
+        <nav class="social-row" aria-label="Profili social" data-reveal>
+          <a class="social-link" href="https://www.instagram.com/buso_design/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.65" cy="6.55" r="1" class="social-dot"/></svg>
           </a>
-          {{end}}
+          <a class="social-link" href="https://www.linkedin.com/in/alessiobuso/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.1 8.4v9.7M6.1 5.1v.1M10.4 18.1v-5.5a3.1 3.1 0 0 1 6.2 0v5.5M10.4 11.4v6.7"/><path d="M3.8 3.8h16.4v16.4H3.8z"/></svg>
+          </a>
+        </nav>
+        <section class="projects" aria-labelledby="projects-title" data-reveal>
+          <h2 id="projects-title" class="projects__title" data-typing-title><span class="typing-title-full">I miei progetti</span><span class="typing-title-typed" aria-hidden="true"></span></h2>
+          <div class="project-list">
+            {{range .Config.Projects}}
+            <a class="project-card {{.Class}}" href="{{.URL}}" target="_blank" rel="noopener noreferrer" aria-label="{{.Name}}">
+              <span class="project-card__logo"><img src="{{.Logo}}" alt="{{.Alt}}" width="120" height="80" /></span>
+              {{if ne .Name "ABBO"}}<span class="project-card__name">{{.Name}}</span>{{end}}
+            </a>
+            {{end}}
+          </div>
         </section>
-        {{end}}
-        <section class="links">
-          {{range .Config.Links}}
-          {{- $style := "" -}}
-          {{- if .Background }}{{ $style = printf "%s--link-bg-custom:%s;" $style .Background }}{{ end -}}
-          {{- if .Text }}{{ $style = printf "%s--link-text-custom:%s;" $style .Text }}{{ end -}}
-          {{- if .Border }}{{ $style = printf "%s--link-border-custom:%s;" $style .Border }}{{ end -}}
-          {{- if .HoverBackground }}{{ $style = printf "%s--link-hover-bg-custom:%s;" $style .HoverBackground }}{{ end -}}
-          {{- if .HoverText }}{{ $style = printf "%s--link-hover-text-custom:%s;" $style .HoverText }}{{ end -}}
-          <a
-            class="link-item"
-            href="{{.URL}}"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="{{$style | safeCSS}}"
-          >
-            <p>{{.Name}}</p>
-          </a>
-          {{end}}
+        <section class="instagram" aria-labelledby="instagram-title" data-reveal>
+          <h2 id="instagram-title" data-typing-title><span class="typing-title-full">Instagram</span><span class="typing-title-typed" aria-hidden="true"></span></h2>
+          <div class="instagram-feed" data-instagram-feed aria-live="polite">
+            <div class="instagram-empty" data-instagram-empty>
+              <p>Guarda gli ultimi lavori e gli esperimenti visivi di Alessio.</p>
+              <a class="instagram-cta" href="{{.Config.InstagramURL}}" target="_blank" rel="noopener noreferrer">Seguimi su Instagram <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
         </section>
       </main>
-      <footer>
-        <small>Developed by Alessio Bellan</small>
-      </footer>
+      <footer data-reveal><small>Made with ❤️ and 🍕 by <a href="https://alessiobellan.it" target="_blank" rel="noopener noreferrer">Alessio Bellan</a></small></footer>
     </div>
     <script src="assets/js/script.js"></script>
   </body>

@@ -84,6 +84,9 @@ func copyAssets(theme string) error {
 	if err := os.MkdirAll("assets/fonts", os.ModePerm); err != nil {
 		return fmt.Errorf("failed to create assets/fonts directory: %w", err)
 	}
+	if err := os.MkdirAll("assets/data", os.ModePerm); err != nil {
+		return fmt.Errorf("failed to create assets/data directory: %w", err)
+	}
 
 	cssFiles, err := filepath.Glob(fmt.Sprintf("themes/%s/assets/css/*.css", theme))
 	if err != nil {
@@ -123,6 +126,14 @@ func copyAssets(theme string) error {
 	}
 	if err := copyFiles(fontFiles, "assets/fonts"); err != nil {
 		return fmt.Errorf("failed to copy font files: %w", err)
+	}
+
+	dataFiles, err := filepath.Glob(fmt.Sprintf("themes/%s/assets/data/*", theme))
+	if err != nil {
+		return fmt.Errorf("failed to list data files: %w", err)
+	}
+	if err := copyFiles(dataFiles, "assets/data"); err != nil {
+		return fmt.Errorf("failed to copy data files: %w", err)
 	}
 
 	return nil
