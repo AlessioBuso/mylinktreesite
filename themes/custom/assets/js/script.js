@@ -121,6 +121,9 @@
     let currentY = 0;
     let targetX = 0;
     let targetY = 0;
+    let orientationEnabled = false;
+    let baseBeta = null;
+    let baseGamma = null;
     const render = () => {
       currentX += (targetX - currentX) * .1;
       currentY += (targetY - currentY) * .1;
@@ -140,8 +143,12 @@
     };
     const orientation = (event) => {
       if (typeof event.gamma !== "number" || typeof event.beta !== "number") return;
-      targetX = Math.max(-5, Math.min(5, event.gamma / 12));
-      targetY = Math.max(-5, Math.min(5, -(event.beta - 45) / 12));
+      if (baseBeta === null || baseGamma === null) {
+        baseBeta = event.beta;
+        baseGamma = event.gamma;
+      }
+      targetX = Math.max(-6, Math.min(6, (event.gamma - baseGamma) * .35));
+      targetY = Math.max(-6, Math.min(6, -(event.beta - baseBeta) * .35));
       renderTilt();
     };
     const reset = () => {
@@ -152,16 +159,23 @@
     card.addEventListener("pointermove", move, { passive: true });
     card.addEventListener("pointerleave", reset, { passive: true });
     if ("DeviceOrientationEvent" in window) {
-      const enableOrientation = () => window.addEventListener("deviceorientation", orientation, { passive: true });
-      if (typeof DeviceOrientationEvent.requestPermission === "function") {
-        card.addEventListener("click", async () => {
-          try {
-            if (await DeviceOrientationEvent.requestPermission() === "granted") enableOrientation();
-          } catch {}
-        }, { once: true });
-      } else {
-        enableOrientation();
-      }
+      const enableOrientation = () => {
+        if (orientationEnabled) return;
+        orientationEnabled = true;
+        window.addEventListener("deviceorientation", orientation, { passive: true });
+        window.addEventListener("deviceorientationabsolute", orientation, { passive: true });
+      };
+      const requestOrientation = async () => {
+        if (!window.isSecureContext) return;
+        try {
+          if (typeof DeviceOrientationEvent.requestPermission === "function") {
+            if (await DeviceOrientationEvent.requestPermission() !== "granted") return;
+          }
+          enableOrientation();
+        } catch {}
+      };
+      card.addEventListener("pointerdown", requestOrientation, { passive: true });
+      if (typeof DeviceOrientationEvent.requestPermission !== "function") enableOrientation();
     }
   }
 })();

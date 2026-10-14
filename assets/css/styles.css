@@ -47,7 +47,7 @@ body.js-ready [data-reveal] { opacity: 0; transform: translateY(18px); }
 body.js-ready [data-reveal].is-revealed { opacity: 1; transform: translateY(0); }
 
 .hero { perspective: 1200px; padding: 14px 0 0; }
-.hero__card { position: relative; min-height: clamp(300px, 45vw, 360px); display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #1a1618; box-shadow: 0 22px 70px rgba(0,0,0,.24); transform-style: preserve-3d; transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s ease; will-change: transform; }
+.hero__card { position: relative; min-height: clamp(300px, 45vw, 360px); display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #1a1618; box-shadow: 0 22px 70px rgba(0,0,0,.24); transform-style: preserve-3d; transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s ease; touch-action: pan-y; will-change: transform; }
 .hero__logo { width: min(42%, 300px); height: auto; object-fit: contain; filter: drop-shadow(0 10px 18px rgba(0,0,0,.16)); transform: translateZ(28px); }
 
 main { margin-top: 16px; padding: 42px clamp(20px, 6vw, 54px) 18px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(24,20,22,.86); box-shadow: 0 22px 70px rgba(0,0,0,.2); }
