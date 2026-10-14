@@ -52,7 +52,7 @@ body.js-ready [data-reveal].is-revealed { opacity: 1; transform: translateY(0); 
 main { margin-top: 16px; padding: 42px clamp(20px, 6vw, 54px) 18px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(24,20,22,.86); box-shadow: 0 22px 70px rgba(0,0,0,.2); }
 .profile { text-align: center; padding-bottom: 31px; }
 h1, h2, p { margin: 0; }
-h1, h2 { font-family: "Buso Display", sans-serif; font-weight: 600; letter-spacing: -.035em; text-wrap: balance; }
+h1, h2 { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 700; letter-spacing: -.055em; text-wrap: balance; }
 h1 { font-size: clamp(2.6rem, 8vw, 4.3rem); line-height: .94; }
 .profile__bio { margin-top: 13px; color: var(--muted); font-size: .98rem; }
 .instagram-cta { display: inline-flex; align-items: center; gap: 17px; margin-top: 25px; padding: 11px 0 10px; border-bottom: 1px solid var(--line-strong); color: var(--ink); font-size: .8rem; text-decoration: none; transition: color .25s ease, border-color .25s ease, gap .25s ease; }
@@ -61,6 +61,7 @@ h1 { font-size: clamp(2.6rem, 8vw, 4.3rem); line-height: .94; }
 .social-row { display: flex; justify-content: center; gap: 12px; padding: 4px 0 44px; }
 .social-link { display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); text-decoration: none; transition: color .3s ease, border-color .3s ease, background-color .3s ease, transform .3s ease; }
 .social-link svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.55; }
+.social-link svg.social-link--linkedin { fill: currentColor; stroke: none; }
 .social-link .social-dot { fill: currentColor; stroke: none; }
 .social-link:hover, .social-link:focus-visible { transform: translateY(-3px); color: var(--ink); border-color: var(--line-strong); background: rgba(246,242,245,.07); }
 .social-link:active { transform: translateY(-1px) scale(.98); }
@@ -86,8 +87,9 @@ body.js-ready [data-typing-title].is-typing .typing-title-typed { opacity: 1; }
 .project-card--heroes .project-card__logo img { filter: drop-shadow(0 0 10px rgba(204,124,247,.35)); }
 .project-card--abbo .project-card__logo { width: 240px; height: 112px; }
 .project-card--abbo .project-card__logo img { width: 240px; height: 112px; }
+.project-card--heroes .project-card__name { display: none; }
 .project-card:hover .project-card__logo img, .project-card:focus-visible .project-card__logo img { transform: scale(1.08); filter: drop-shadow(0 0 15px rgba(255,255,255,.3)); }
-.project-card__name { min-width: 0; overflow-wrap: break-word; font-family: "Buso Display", sans-serif; font-size: clamp(1.3rem, 4vw, 2rem); letter-spacing: -.03em; }
+.project-card__name { min-width: 0; overflow-wrap: break-word; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: clamp(1.3rem, 4vw, 2rem); font-weight: 700; letter-spacing: -.055em; }
 .instagram { margin-top: 76px; padding-top: 31px; border-top: 1px solid var(--line); }
 .instagram-empty { margin-top: 25px; padding: 36px 22px 38px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(135deg, rgba(246,242,245,.06), transparent); }
 .instagram-empty p { max-width: 31ch; color: var(--muted); line-height: 1.55; }
