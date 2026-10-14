@@ -53,12 +53,12 @@ links:
 projects:
   - name: "Digital Heroes"
     url: "https://www.digital-heroes.me"
-    logo: "assets/images/digital-heroes.svg"
+    logo: "assets/images/brand/digital-heroes.svg"
     alt: "Logo Digital Heroes"
     class: "project-card--heroes"
   - name: "ABBO"
     url: "https://www.abboaps.org/"
-    logo: "assets/images/abbo.svg"
+    logo: "assets/images/brand/abbo.svg"
     alt: "Logo ABBO"
     class: "project-card--abbo"
 
