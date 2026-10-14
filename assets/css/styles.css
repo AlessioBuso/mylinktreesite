@@ -81,12 +81,12 @@ body.js-ready [data-typing-title].is-typing .typing-title-typed { opacity: 1; }
 .project-card:hover, .project-card:focus-visible { transform: translateY(-4px); border-color: rgba(246,242,245,.45); box-shadow: 0 15px 30px rgba(0,0,0,.18); }
 .project-card:hover::before, .project-card:focus-visible::before { transform: translateX(145%); }
 .project-card--heroes { background: #3e0260; color: #f8edff; }
-.project-card--abbo { min-height: 112px; padding: 0 20px; background: linear-gradient(135deg, #f45100 0%, #ff9800 100%); color: #fff; border-color: rgba(255,255,255,.42); }
+.project-card--abbo { background: linear-gradient(135deg, #f45100 0%, #ff9800 100%); color: #fff; border-color: rgba(255,255,255,.42); }
 .project-card__logo { display: grid; place-items: center; width: 88px; height: 78px; flex: 0 0 auto; }
 .project-card__logo img { width: 74px; height: 62px; object-fit: contain; transition: filter .35s ease, transform .35s cubic-bezier(.16,1,.3,1); }
 .project-card--heroes .project-card__logo img { filter: drop-shadow(0 0 10px rgba(204,124,247,.35)); }
-.project-card--abbo .project-card__logo { width: 240px; height: 112px; }
-.project-card--abbo .project-card__logo img { width: 240px; height: 112px; }
+.project-card--abbo .project-card__logo { width: 200px; height: 82px; }
+.project-card--abbo .project-card__logo img { width: 200px; height: 82px; }
 .project-card--heroes .project-card__name { display: none; }
 .project-card:hover .project-card__logo img, .project-card:focus-visible .project-card__logo img { transform: scale(1.08); filter: drop-shadow(0 0 15px rgba(255,255,255,.3)); }
 .project-card__name { min-width: 0; overflow-wrap: break-word; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: clamp(1.3rem, 4vw, 2rem); font-weight: 700; letter-spacing: -.055em; }
@@ -115,9 +115,8 @@ footer { padding: 25px 0 0; color: var(--dim); text-align: center; font-size: .7
   .project-card__logo { width: 80px; height: 70px; }
   .project-card__logo img { width: 78px; height: 66px; }
   .project-card__name { font-size: 1.5rem; }
-  .project-card--abbo { min-height: 112px; padding: 0 14px; }
-  .project-card--abbo .project-card__logo { width: 240px; height: 112px; }
-  .project-card--abbo .project-card__logo img { width: 240px; height: 112px; }
+  .project-card--abbo .project-card__logo { width: 200px; height: 82px; }
+  .project-card--abbo .project-card__logo img { width: 200px; height: 82px; }
   .js-ready .loader { display: none; }
   .instagram-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .instagram-grid a { aspect-ratio: 1; }
