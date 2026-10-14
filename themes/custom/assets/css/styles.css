@@ -108,7 +108,7 @@ footer { padding: 25px 0 0; color: var(--dim); text-align: center; font-size: .7
 
 @media (max-width: 560px) {
   .page-shell { width: min(calc(100% - 20px), var(--max)); padding-top: 10px; }
-  .hero__card { min-height: 290px; }
+  .hero__card { min-height: 0; aspect-ratio: 1.45 / 1; }
   .hero__logo { width: 48%; }
   main { margin-top: 10px; padding: 36px 17px 15px; }
   h1 { max-width: 100%; font-size: clamp(2.35rem, 11vw, 2.9rem); overflow-wrap: break-word; }

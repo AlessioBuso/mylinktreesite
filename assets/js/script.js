@@ -115,7 +115,7 @@
 
   const card = document.querySelector("[data-tilt-card]");
   const surface = card?.querySelector(".hero__card");
-  if (!reduce && card && surface && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  if (!reduce && card && surface) {
     let raf = 0;
     let currentX = 0;
     let currentY = 0;
@@ -128,11 +128,21 @@
       if (Math.abs(targetX - currentX) > .01 || Math.abs(targetY - currentY) > .01) raf = requestAnimationFrame(render);
       else raf = 0;
     };
+    const renderTilt = () => {
+      if (!raf) raf = requestAnimationFrame(render);
+    };
     const move = (event) => {
+      if (event.pointerType === "touch") return;
       const bounds = card.getBoundingClientRect();
       targetX = ((event.clientX - bounds.left) / bounds.width - .5) * 8;
       targetY = ((event.clientY - bounds.top) / bounds.height - .5) * -8;
-      if (!raf) raf = requestAnimationFrame(render);
+      renderTilt();
+    };
+    const orientation = (event) => {
+      if (typeof event.gamma !== "number" || typeof event.beta !== "number") return;
+      targetX = Math.max(-5, Math.min(5, event.gamma / 12));
+      targetY = Math.max(-5, Math.min(5, -(event.beta - 45) / 12));
+      renderTilt();
     };
     const reset = () => {
       targetX = 0;
@@ -141,5 +151,17 @@
     };
     card.addEventListener("pointermove", move, { passive: true });
     card.addEventListener("pointerleave", reset, { passive: true });
+    if ("DeviceOrientationEvent" in window) {
+      const enableOrientation = () => window.addEventListener("deviceorientation", orientation, { passive: true });
+      if (typeof DeviceOrientationEvent.requestPermission === "function") {
+        card.addEventListener("click", async () => {
+          try {
+            if (await DeviceOrientationEvent.requestPermission() === "granted") enableOrientation();
+          } catch {}
+        }, { once: true });
+      } else {
+        enableOrientation();
+      }
+    }
   }
 })();
