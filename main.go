@@ -141,6 +141,28 @@ func copyAssets(theme string) error {
 
 func copyFiles(files []string, outputDir string) error {
 	for _, file := range files {
+		info, err := os.Stat(file)
+		if err != nil {
+			return fmt.Errorf("failed to stat %s: %w", file, err)
+		}
+		if info.IsDir() {
+			entries, err := os.ReadDir(file)
+			if err != nil {
+				return fmt.Errorf("failed to read directory %s: %w", file, err)
+			}
+			children := make([]string, 0, len(entries))
+			for _, entry := range entries {
+				children = append(children, filepath.Join(file, entry.Name()))
+			}
+			if err := copyFiles(children, filepath.Join(outputDir, filepath.Base(file))); err != nil {
+				return err
+			}
+			continue
+		}
+
+		if err := os.MkdirAll(outputDir, os.ModePerm); err != nil {
+			return fmt.Errorf("failed to create %s: %w", outputDir, err)
+		}
 		data, err := os.ReadFile(file)
 		if err != nil {
 			return fmt.Errorf("failed to read %s: %w", file, err)
